@@ -10,6 +10,10 @@ var x = setInterval(function(){
     var mins = Math.floor(distance / (1000 * 60)) % 60;
     var secs = Math.floor(distance / (1000)) % 60;
 
+    if(hours < 10){
+        hours = "0" + hours;
+    }
+
     if(mins < 10){
         mins = "0" + mins;
     }

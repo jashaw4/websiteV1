@@ -1,5 +1,3 @@
-let dropdown = document.getElementById("ddown");
-
 function toggleDropdown(){
-    ddown.classList.toggle("open-menu");
+    document.getElementById("ddown").classList.toggle("open-menu");
 }

@@ -22,14 +22,14 @@
     border-style: solid;
     border-color:rgb(230, 230, 245);
     border-radius: 6px;
-    border-width: 1px;
+    border-width: 1.5px;
     cursor: pointer;
     display: block;
 }
 
 .bar1,.bar2,.bar3{
     width: 18px;
-    height: 1px;
+    height: 1.5px;
     background-color: rgb(230, 230, 245);
     margin-left: 6px;
 }
@@ -96,8 +96,9 @@ p {
 #countdown{
     color: #010057;
     text-align: center;
-    font-size: xxx-large;
+    font-size: 50pt;
     font-family: 'Seven Segment', sans-serif;
+    padding-top: 100px;
 }
 
 body{
@@ -108,10 +109,18 @@ body{
     width: 50%;
     float: left;
     color: #03002e;
+    padding-top: 70px;
 }
 
 .Hi h1{
-    text-align: center;
+    padding-left: 80px;
+    text-align: left;
+    color:#010057;
+    font-size: 72pt;
+}
+
+.Hi p{
+    font-size: large;
 }
 
 figure{

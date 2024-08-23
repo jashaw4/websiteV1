@@ -97,9 +97,9 @@ p {
 #countdown{
     color: #010057;
     text-align: center;
-    font-size: 50pt;
+    font-size: 60pt;
     font-family: 'Seven Segment', sans-serif;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 body{
@@ -110,7 +110,7 @@ body{
     width: 50%;
     float: left;
     color: #03002e;
-    padding-top: 35px;
+    padding-top: 30px;
 }
 
 .Hi h1{
@@ -131,7 +131,6 @@ figure{
 }
 
 #me{
-    width: 400px;
-    height: 400px;
+    width: 30%;
     box-shadow: 1px 1px 1px 1px #ccc;
 }

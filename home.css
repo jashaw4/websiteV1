@@ -88,14 +88,8 @@
     width: 200px;
 }
 
-p {
-    color: black;
-    text-align: left;
-    padding: 5px 0px 0px 20px;
-}
-
 #countdown{
-    color: #010057;
+    color:#010057;
     text-align: center;
     font-size: 60pt;
     font-family: 'Seven Segment', sans-serif;
@@ -109,7 +103,6 @@ body{
 .Hi{
     width: 50%;
     float: left;
-    color: #03002e;
     padding-top: 30px;
 }
 
@@ -122,6 +115,9 @@ body{
 
 .Hi p{
     font-size: large;
+    color:#010057;
+    text-align: left;
+    padding: 5px 0px 0px 20px;
 }
 
 figure{

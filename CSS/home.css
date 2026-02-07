@@ -58,7 +58,7 @@ path:nth-child(4) {
     animation-delay: 1.75s; 
 }
 path:nth-child(5) { 
-    animation-delay: 2.1s;
+    animation-delay: 1.85s;
 }
 
 
@@ -70,7 +70,7 @@ path:nth-child(5) {
 
 .content-section {
     display: flex;
-    align-items: flext-start;
+    align-items: flex-start;
     justify-content: space-between; 
     padding: 10px 2%; 
     width: 96%; 
@@ -104,6 +104,17 @@ figure{
 }
 
 #me{
-    width: 300px; 
+    width: 400px; 
     box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.diploma-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px 2%;
+    flex-wrap: wrap;
+}
+
+.diploma {
+    width: 600px;
 }

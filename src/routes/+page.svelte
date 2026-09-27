@@ -72,6 +72,10 @@
         {#each diplomas as diploma}
           <figure class="diploma-card">
             <div class="diploma-frame">
+              <span class="frame-piece frame-top" aria-hidden="true"></span>
+              <span class="frame-piece frame-right" aria-hidden="true"></span>
+              <span class="frame-piece frame-bottom" aria-hidden="true"></span>
+              <span class="frame-piece frame-left" aria-hidden="true"></span>
               <img src={diploma.src} alt={diploma.alt} loading="lazy" />
             </div>
           </figure>
@@ -240,48 +244,61 @@
   }
 
   .diploma-frame {
+    --frame-piece: clamp(1.15rem, 2.6vw, 2rem);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     aspect-ratio: 22 / 17;
-    padding: clamp(1.15rem, 2.6vw, 2rem);
+    padding: var(--frame-piece);
     overflow: hidden;
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 24%),
-      linear-gradient(90deg, #3a1f12, #7b4b2d 12%, #241008 26%, #8b5a36 45%, #2a1309 68%, #6f4025);
-    border: clamp(0.6rem, 1.4vw, 1rem) solid #2b160c;
-    box-shadow:
-      0 1.2rem 2rem rgba(3, 0, 46, 0.2),
-      inset 0 0 0 1px rgba(255, 231, 184, 0.3),
-      inset 0 0.4rem 0.9rem rgba(255, 242, 204, 0.18),
-      inset 0 -0.5rem 0.9rem rgba(0, 0, 0, 0.4);
+    background: #32180e;
+    border: clamp(0.25rem, 0.7vw, 0.45rem) solid #3a1f12;
+    box-shadow: 0 0.7rem 1.2rem rgba(3, 0, 46, 0.18);
   }
 
-  .diploma-frame::before {
-    content: '';
+  .frame-piece {
     position: absolute;
-    inset: clamp(0.45rem, 1vw, 0.7rem);
-    z-index: 0;
-    border: 1px solid rgba(255, 230, 180, 0.34);
-    box-shadow:
-      inset 0 0 0 clamp(0.4rem, 1vw, 0.75rem) rgba(52, 25, 12, 0.62),
-      inset 0 0 1.5rem rgba(0, 0, 0, 0.55);
-    pointer-events: none;
-  }
-
-  .diploma-frame::after {
-    content: '';
-    position: absolute;
-    inset: clamp(1.75rem, 4vw, 3rem);
     z-index: 2;
-    background:
-      linear-gradient(115deg, rgba(255, 255, 255, 0.42) 0 12%, transparent 13% 44%, rgba(255, 255, 255, 0.14) 45% 50%, transparent 51%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 42%);
-    opacity: 0.42;
     pointer-events: none;
+    background: linear-gradient(135deg, #32180e, #4a2919 52%, #2b140b);
   }
 
+  .frame-top,
+  .frame-bottom {
+    left: 0;
+    width: 100%;
+    height: var(--frame-piece);
+  }
+
+  .frame-top {
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, calc(100% - var(--frame-piece)) 100%, var(--frame-piece) 100%);
+  }
+
+  .frame-bottom {
+    bottom: 0;
+    clip-path: polygon(var(--frame-piece) 0, calc(100% - var(--frame-piece)) 0, 100% 100%, 0 100%);
+  }
+
+  .frame-left,
+  .frame-right {
+    top: 0;
+    width: var(--frame-piece);
+    height: 100%;
+  }
+
+  .frame-left {
+    left: 0;
+    clip-path: polygon(0 0, 100% var(--frame-piece), 100% calc(100% - var(--frame-piece)), 0 100%);
+  }
+
+  .frame-right {
+    right: 0;
+    clip-path: polygon(0 var(--frame-piece), 100% 0, 100% 100%, 0 calc(100% - var(--frame-piece)));
+  }
+
+  /* Keep the diploma above the frame pieces so the seams remain at the edges. */
   .diploma-frame img {
     position: relative;
     z-index: 1;
@@ -296,10 +313,6 @@
     padding: clamp(0.8rem, 2vw, 1.4rem);
     background: #f7f2e7;
     border: 1px solid rgba(85, 60, 36, 0.28);
-    box-shadow:
-      0 0 0 clamp(0.7rem, 1.6vw, 1.2rem) #efe6d2,
-      0 0 0 clamp(0.78rem, 1.8vw, 1.32rem) rgba(87, 58, 32, 0.45),
-      0 0.55rem 1.1rem rgba(0, 0, 0, 0.18);
   }
 
   .reveal {

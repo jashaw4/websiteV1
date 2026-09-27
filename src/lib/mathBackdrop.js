@@ -27,13 +27,13 @@ const curveDefinitions = [
     //stroke: '#995634',
     stroke: '#005f00',
     d: (mapX, mapY) =>
-      buildCurvePath((x) => 0.003*(x - 10)**3, -10, 100, 200, mapX, mapY, 0, 0)
+      buildCurvePath((x) => 0.003*(x - 10)**3, - 10, 100, 200, mapX, mapY, 0, 0)
   },
   {
     //stroke: '#7858a0',
     stroke: '#00009f',
     d: (mapX, mapY) =>
-      buildCurvePath((x) => Math.atan(x * 0.25) * -3, -100, 100, 200, mapX, mapY, 0, 0)
+      buildCurvePath((x) => Math.atan(x * 0.2) * - 4, -100, 100, 200, mapX, mapY, 0, 0)
   },
   {
     //stroke: '#ab7c2d',
@@ -61,9 +61,6 @@ export function buildMathBackdrop() {
           <path d="M 88 0 L 0 0 0 88" fill="none" stroke="rgba(1,0,87,0.1)" stroke-width="2"/>
           <path d="M 44 0 L 44 88 M 0 44 L 88 44" fill="none" stroke="rgba(1,0,87,0.1)" stroke-width="2"/>
         </pattern>
-        <filter id="soften">
-          <feGaussianBlur stdDeviation="0.18" />
-        </filter>
       </defs>
 
       <rect width="3840" height="2160" fill="rgba(255,255,255,0.12)"/>
@@ -79,7 +76,6 @@ export function buildMathBackdrop() {
               stroke-width="5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              filter="url(#soften)"
             />
           `
         )

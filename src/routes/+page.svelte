@@ -110,7 +110,7 @@
       radial-gradient(circle at bottom right, rgba(182, 193, 219, 0.3), transparent 36%),
       linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(211, 218, 239, 0.42));
     background-size: cover, auto, auto, auto;
-    opacity: 0.7;
+    opacity: 0.82;
   }
 
   .page::after {
@@ -178,14 +178,8 @@
     max-width: 42rem;
     padding: clamp(1rem, 2vw, 1.5rem);
     border-radius: 0.75rem;
-
-    /* Modern progressive enhancement using @supports */
-    @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-      background-color: rgba(230, 230, 245, 0.25);
-      -webkit-backdrop-filter: blur(8px) saturate(120%);
-      backdrop-filter: blur(8px) saturate(120%);
-    }
-
+    background-color: rgba(230, 230, 245, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.42);
     box-shadow: 0 0.6rem 1.6rem rgba(3, 0, 46, 0.08);
   }
 
@@ -247,6 +241,9 @@
 
   .diploma-frame {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     aspect-ratio: 22 / 17;
     padding: clamp(1.15rem, 2.6vw, 2rem);
     overflow: hidden;
@@ -288,6 +285,9 @@
   .diploma-frame img {
     position: relative;
     z-index: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;

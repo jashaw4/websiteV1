@@ -285,11 +285,12 @@
   .diploma-frame img {
     position: relative;
     z-index: 1;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: 0;
     min-height: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 100%;
     object-fit: contain;
     object-position: center;
     padding: clamp(0.8rem, 2vw, 1.4rem);
